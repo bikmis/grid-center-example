@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body,
+    html {
+      margin: 0;
+      /* scroll bar goes away when container is set to 100vh */
+    }
+
+    * {
+      box-sizing: border-box;
+      /*width = element width + padding + border size and height = element height + padding + border size*/
+      margin: 0;
+      /*all element's margin is set to zero*/
+      padding: 0;
+      /*all element's padding is set to zero*/
+    }
+
+    .container-grid {
+      display: grid;
+      /*this container has 1 column and 1 row only*/
+      min-height: 100vh;
+      /*100% of the viewport height*/
+    }
+
+    .login-box {
+      display: grid;
+      grid-column: 1 / 2;
+      /*expands from column line 1 to column line 2 i.e. 1 column (there is only one column in the parent grid i.e. .container-grid)*/
+      grid-row: 1 / 2;
+      /*expands from row line 1 to row line 2 i.e. 1 row (there is only one row in the parent grid i.e. .container-grid)*/
+      align-self: center;
+      /*vertically centers in the grid of .container-grid*/
+      justify-self: center;
+      /*horizontally centers in the grid of .container-grid*/
+      border: 1px solid red;
+      border-radius: 10px;
+      padding: 30px
+    }
+
+    .credential-box {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      /*this grid has 2 columns - one 1 fraction and the other 2 fractions*/
+      column-gap: 10px;
+      grid-template-rows: 1fr 1fr 1fr;
+      /*this grid has 3 rows of equal size*/
+      row-gap: 10px;
+      align-self: center;
+      /*vertically centers in the grid of .login-box*/
+      justify-self: center;
+      /*horizontally centers in the grid of .login-box*/
+    }
+
+    .img-angel {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      align-self: center;
+      /*vertically centers in the grid of .container-grid*/
+      justify-self: center;
+      /*horizontally centers in the grid of .container-grid*/
+    }
+
+    input {
+      border-radius: 5px;
+      border: 1px solid red;
+      background: transparent;
+    }
+
+    button {
+      height: 35px;
+      width: 100px;
+      color: red;
+      border: 1px solid red;
+      border-radius: 5px;
+      font-size: 18px;
+      font-weight: bolder;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    span {
+      font-size: 18px;
+      color: red;
+      font-weight: bolder;
+    }
+  </style>
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container-grid">
+    <img src="angelwings.webp" class="img-angel" width="300px">
+    <!--Because the aspect ratio of the image is 1:1, the height is automatically the same as the width -->
+    <div class="login-box">
+      <div class="credential-box">
+        <span>Username</span>
+        <input type="text">
+        <span>Password</span>
+        <input type="password">
+        <button>Login</button>
+        <button>Cancel</button>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>
